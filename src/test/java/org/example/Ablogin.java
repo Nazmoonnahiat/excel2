@@ -1,11 +1,12 @@
 package org.example;
+
 import org.example.utils.ExcelUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.testng.AllureTestNg;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.*;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -13,22 +14,31 @@ import java.io.IOException;
 import java.time.Duration;
 
 import org.testng.annotations.Listeners;
+
 @Listeners({AllureTestNg.class})
 public class Ablogin {
 
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp() {
-        WebDriverManager.firefoxdriver().setup();
-        FirefoxProfile profile = new FirefoxProfile();
-        profile.setPreference("geo.enabled", false);
-        profile.setPreference("geo.prompt.testing", true);
-        profile.setPreference("geo.prompt.testing.allow", false);
+    @Parameters("browser")
+    public void setUp(@Optional("firefox") String browser) {
+        System.out.println("Running on OS: " + System.getProperty("os.name"));
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            driver = new ChromeDriver(options);
+        } else {
+            WebDriverManager.firefoxdriver().setup();
+            FirefoxProfile profile = new FirefoxProfile();
+            profile.setPreference("geo.enabled", false);
+            profile.setPreference("geo.prompt.testing", true);
+            profile.setPreference("geo.prompt.testing.allow", false);
+            FirefoxOptions options = new FirefoxOptions();
+            options.setProfile(profile);
+            driver = new FirefoxDriver(options);
+        }
 
-        FirefoxOptions options = new FirefoxOptions();
-        options.setProfile(profile);
-        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://qa-abbl-customer-web.global.fintech23.xyz/sign-in");
@@ -36,7 +46,9 @@ public class Ablogin {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     @Test(dataProvider = "loginData")
@@ -48,6 +60,7 @@ public class Ablogin {
             assertLoginFailed();
         }
     }
+
     @DataProvider(name = "loginData")
     public Object[][] getLoginData() throws IOException {
         return ExcelUtils.readExcelData("LoginData.xlsx", "Sheet1");
@@ -67,7 +80,8 @@ public class Ablogin {
     }
 
     private void assertLoginFailed() {
-        boolean errorDisplayed = driver.getPageSource().contains("Invalid") || driver.getCurrentUrl().contains("sign-in");
+        boolean errorDisplayed = driver.getPageSource().contains("Invalid")
+                || driver.getCurrentUrl().contains("sign-in");
         Assert.assertTrue(errorDisplayed, "Login should have failed but didn't.");
     }
 }
