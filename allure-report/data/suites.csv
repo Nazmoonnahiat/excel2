@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed May 21 10:55:46 BDT 2025","Wed May 21 10:55:47 BDT 2025","935","Default Suite","excel2","org.example.testCases.AbLoginTest","org.example.testCases.AbLoginTest","loginTest","loginTest",""
+"passed","Wed May 21 10:55:33 BDT 2025","Wed May 21 10:55:34 BDT 2025","1091","Default Suite","excel2","org.example.testCases.AbLoginTest","org.example.testCases.AbLoginTest","loginTest","loginTest",""
+"passed","Wed May 21 10:55:40 BDT 2025","Wed May 21 10:55:41 BDT 2025","938","Default Suite","excel2","org.example.testCases.AbLoginTest","org.example.testCases.AbLoginTest","loginTest","loginTest",""

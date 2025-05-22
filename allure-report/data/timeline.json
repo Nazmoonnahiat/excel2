@@ -1,0 +1,52 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "BS-00865",
+    "children" : [ {
+      "name" : "15048@BS-00865.main(3)",
+      "children" : [ {
+        "name" : "loginTest",
+        "uid" : "863b9634f11e0b3d",
+        "parentUid" : "731f4220a7b6467c021ce364c378baf0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1747803346817,
+          "stop" : 1747803347752,
+          "duration" : 935
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "shamsaldina", "1234756@Ff" ]
+      }, {
+        "name" : "loginTest",
+        "uid" : "e30edec857bd31bb",
+        "parentUid" : "731f4220a7b6467c021ce364c378baf0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1747803333604,
+          "stop" : 1747803334695,
+          "duration" : 1091
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "shamsaldin", "123456@Ff" ]
+      }, {
+        "name" : "loginTest",
+        "uid" : "4a1a9dca84f06cb9",
+        "parentUid" : "731f4220a7b6467c021ce364c378baf0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1747803340210,
+          "stop" : 1747803341148,
+          "duration" : 938
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "wronguser", "123456@Ff" ]
+      } ],
+      "uid" : "731f4220a7b6467c021ce364c378baf0"
+    } ],
+    "uid" : "851111476f6ca913326a4ef8007c664c"
+  } ]
+}

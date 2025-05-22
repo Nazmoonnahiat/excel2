@@ -1,0 +1,100 @@
+{
+  "uid" : "863b9634f11e0b3d",
+  "name" : "loginTest",
+  "fullName" : "org.example.testCases.AbLoginTest.loginTest",
+  "historyId" : "d7ac9bf8c7b2dda5f5cae45cc565dc7b",
+  "time" : {
+    "start" : 1747803346817,
+    "stop" : 1747803347752,
+    "duration" : 935
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1747803342271,
+      "stop" : 1747803346812,
+      "duration" : 4541
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1747803347754,
+      "stop" : 1747803349002,
+      "duration" : 1248
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "org.example.testCases.AbLoginTest"
+  }, {
+    "name" : "testClass",
+    "value" : "org.example.testCases.AbLoginTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "loginTest"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Default Suite"
+  }, {
+    "name" : "suite",
+    "value" : "excel2"
+  }, {
+    "name" : "subSuite",
+    "value" : "org.example.testCases.AbLoginTest"
+  }, {
+    "name" : "host",
+    "value" : "BS-00865"
+  }, {
+    "name" : "thread",
+    "value" : "15048@BS-00865.main(3)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "shamsaldina"
+  }, {
+    "name" : "arg1",
+    "value" : "1234756@Ff"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "863b9634f11e0b3d.json",
+  "parameterValues" : [ "shamsaldina", "1234756@Ff" ]
+}

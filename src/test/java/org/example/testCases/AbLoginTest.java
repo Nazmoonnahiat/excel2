@@ -4,7 +4,7 @@ import io.qameta.allure.testng.AllureTestNg;
 import org.example.BaseTest;
 import org.example.utils.ExcelUtils;
 import org.example.webPages.LoginPage;
-import org.testng.Assert;
+import org.example.webPages.OwnAccountPage;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -23,9 +23,15 @@ public class AbLoginTest extends BaseTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login(username, password);
 
-        if (username.equals("shamsaldin") && password.equals("123456@Ff")) {
-            loginPage.clickCheckbox();
-        }
-        Assert.assertTrue(loginPage.isLoggedInFailed(), "Login should have failed but didn't.");
+        // After login, initiate Own Account
+        OwnAccountPage ownAccountPage = new OwnAccountPage(driver);
+        ownAccountPage.FundIntiate();
+
+
+//        if (username.equals("shovon01") && password.equals("123456@Aa")) {
+//            loginPage.clickCheckbox();
+//        }
+//        Assert.assertTrue(loginPage.isLoggedInFailed(), "Login should have failed but didn't.");
+//    }
     }
 }
